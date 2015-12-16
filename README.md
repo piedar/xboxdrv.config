@@ -8,7 +8,7 @@ Plug in your controller and look for MY_DEVICE in
 
 Then start xboxdrv with the matching device.
 
-    xboxdrv -c $MY_DEVICE.xboxdrv.config
+    xboxdrv -c $MY_DEVICE.xboxdrv
 
 ## New config
 
@@ -17,7 +17,7 @@ First, map out your controller by pushing buttons while running
 
     evtest /dev/input/$MY_DEVICE
 
-Now create `$MY_DEVICE.xboxdrv.config`, following this template:
+Now create `$MY_DEVICE.xboxdrv`, following this template:
 
     [xboxdrv]
     evdev      = /dev/input/by-id/$MY_DEVICE
@@ -62,7 +62,7 @@ Now create `$MY_DEVICE.xboxdrv.config`, following this template:
 
 Now run xboxdrv and read the output to verify that the mapping is correct.
 
-    xboxdrv -c $MY_DEVICE.xboxdrv.config
+    xboxdrv -c $MY_DEVICE.xboxdrv
 
 Once done, please submit a pull request to share your config or to suggest an improvement.
 

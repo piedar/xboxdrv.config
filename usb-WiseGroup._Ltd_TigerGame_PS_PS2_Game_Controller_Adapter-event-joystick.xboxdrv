@@ -1,0 +1,36 @@
+[xboxdrv]
+# For player 2, you must specify second controller like --evdev /dev/input/event6
+evdev      = /dev/input/by-id/usb-WiseGroup._Ltd_TigerGame_PS_PS2_Game_Controller_Adapter-event-joystick
+evdev-grab = true
+mimic-xpad = true
+deadzone   = 5000
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-absmap]
+ABS_X  = X1
+ABS_Y  = Y1
+ABS_Z  = X2
+ABS_RZ = Y2
+
+[evdev-keymap]
+BTN_THUMB2 = A
+BTN_THUMB = B
+BTN_TOP = X
+BTN_TRIGGER = Y
+BTN_BASE = LB
+BTN_BASE2 = RB
+BTN_TOP2 = LT
+BTN_PINKIE = RT
+BTN_BASE5 = TL
+BTN_BASE6 = TR
+BTN_BASE4 = BACK
+BTN_BASE3 = START
+
+# dpad is unnamed keys
+KEY_#300 = DU
+KEY_#301 = DR
+KEY_#302 = DD
+KEY_#303 = DL

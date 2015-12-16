@@ -1,0 +1,38 @@
+[xboxdrv]
+evdev      = /dev/input/by-id/usb-Performance_Designed_Products_Rock_Candy_Wireless_Gamepad_for_PS3-event-joystick
+evdev-grab = true
+mimic-xpad = true
+deadzone   = 3000
+
+[axis-sensitivity]
+X1 = -0.7
+X2 = -0.7
+Y1 = -0.7
+Y2 = -0.7
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-absmap]
+ABS_X  = X1
+ABS_Y  = Y1
+ABS_Z  = X2
+ABS_RZ = Y2
+ABS_HAT0X = DPAD_X
+ABS_HAT0Y = DPAD_Y
+
+[evdev-keymap]
+BTN_B = A
+BTN_C = B
+BTN_A = X
+BTN_X = Y
+BTN_Y = LB
+BTN_Z = RB
+BTN_TL = LT
+BTN_TR = RT
+BTN_SELECT = TL
+BTN_START = TR
+BTN_TL2 = BACK
+BTN_TR2 = START
+BTN_MODE = GUIDE
