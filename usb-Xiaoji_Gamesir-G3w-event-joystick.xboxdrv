@@ -14,9 +14,17 @@
 #   ABS_BRAKE and BTN_TL2 = L2 Trigger
 # - BTN_C and BTN_Z show up in evtest, but none of the buttons appear
 #   to return these codes.
+# - inconsistent results on different computers, on one system, the name
+#   appears right away as:
+#   /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
+#   on a second it appears first as:
+#   /dev/input/by-id/usb-Xiaoji_XBOX_360_For_Windows-event-joystick
+#   but then changes to
+#   /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
 
 [xboxdrv]
 evdev      = /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
+#evdev      = /dev/input/by-id/usb-Xiaoji_XBOX_360_For_Windows-event-joystick
 evdev-grab = true
 mimic-xpad = true
 deadzone   = 3000
