@@ -1,0 +1,107 @@
+# This is for a GameSir G3w controller
+#
+# Issues:
+# - According to the manual, the "Gamesir Homebutton" should switch
+#   controller modes between Android, D-Input and X-Input, but does
+#   not appear to do anything
+# - When starting xboxdrv there is a dead time when the controller is
+#   not responsive, but after 30-60 seconds, it starts reporting
+#   events.
+# - The "turbo" and "clear" buttons do not return any events in
+#   evtest
+# - The trigger buttons map to Axis event and button events
+#   ABS_GAS and BTN_TR2 = R2 Trigger
+#   ABS_BRAKE and BTN_TL2 = L2 Trigger
+# - BTN_C and BTN_Z show up in evtest, but none of the buttons appear
+#   to return these codes.
+# - inconsistent results on different computers, on one system, the name
+#   appears right away as:
+#   /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
+#   on a second it appears first as:
+#   /dev/input/by-id/usb-Xiaoji_XBOX_360_For_Windows-event-joystick
+#   but then changes to
+#   /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
+
+[xboxdrv]
+evdev      = /dev/input/by-id/usb-Xiaoji_Gamesir-G3w-event-joystick
+#evdev      = /dev/input/by-id/usb-Xiaoji_XBOX_360_For_Windows-event-joystick
+evdev-grab = true
+mimic-xpad = true
+deadzone   = 3000
+
+evdev-debug = true
+
+[axis-sensitivity]
+X1 = -0.7
+X2 = -0.7
+Y1 = -0.7
+Y2 = -0.7
+
+# Raw controller inputs on the left map to the xbox equivalent on the right.
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-absmap]
+ABS_X  = X1
+ABS_Y  = Y1
+ABS_Z  = X2
+ABS_RZ = Y2
+ABS_HAT0X = DPAD_X
+ABS_HAT0Y = DPAD_Y
+# ABS_GAS = 
+# ABS_BRAKE = 
+
+[evdev-keymap]
+# this is the output from evtest:
+#  Event type 1 (EV_KEY)
+#    Event code 304 (BTN_SOUTH)
+#    Event code 305 (BTN_EAST)
+#    Event code 306 (BTN_C)
+#    Event code 307 (BTN_NORTH)
+#    Event code 308 (BTN_WEST)
+#    Event code 309 (BTN_Z)
+#    Event code 310 (BTN_TL)
+#    Event code 311 (BTN_TR)
+#    Event code 312 (BTN_TL2)
+#    Event code 313 (BTN_TR2)
+#    Event code 314 (BTN_SELECT)
+#    Event code 315 (BTN_START)
+#    Event code 316 (BTN_MODE)
+#    Event code 317 (BTN_THUMBL)
+#    Event code 318 (BTN_THUMBR)
+# NORTH, SOUTH, EAST, WEST, not understood by xboxdrv
+#BTN_SOUTH = A
+#BTN_EAST = B
+#BTN_NORTH = X
+#BTN_WEST = Y
+KEY_#304 = A
+KEY_#305 = B
+KEY_#307 = X
+KEY_#308 = Y
+
+BTN_SELECT = RB
+BTN_START = LB
+
+# these are the buttons when you press down on the joysticks
+BTN_THUMBL = TL
+BTN_THUMBR = TR
+
+# these are the trigger buttons
+# top
+BTN_TR = RT
+BTN_TL = LT
+# bottom - also map to ABS_GAS and ABS_BRAKE
+# BTN_TR2 = RT
+# BTN_TL2 = LT
+
+BTN_START = START
+BTN_SELECT = BACK
+#BTN_SELECT = GUIDE
+
+# BTN_C, BTN_Z never identified in evtest, but 'turbo', 'clear', and
+# the illuminated 'gamesir' button in the middle never output a result
+# when tested.
+
+
