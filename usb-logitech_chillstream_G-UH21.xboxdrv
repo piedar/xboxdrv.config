@@ -1,0 +1,38 @@
+[xboxdrv]
+evdev      = /dev/input/by-id/usb-logitech_chillstream_G-UH21
+evdev-grab = true
+mimic-xpad = true
+deadzone   = 1000
+
+[axis-sensitivity]
+X1 = -0.7
+X2 = -0.7
+Y1 = -0.7
+Y2 = -0.7
+
+# Raw controller inputs on the left map to the xbox equivalent on the right.
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-absmap]
+ABS_X  = X1  #left joystick, positive right
+ABS_Y  = Y1  #left joystick, positive down
+ABS_RX = X2  #right joystick, positive to the right
+ABS_RY = Y2  #right joystick, positive down
+ABS_HAT0X = DPAD_X #arrows left/right -1 left, 1 right
+ABS_HAT0Y = DPAD_Y #arrows up/down -1 up, 1 down
+
+[evdev-keymap]
+BTN_SOUTH = A
+BTN_EAST = B
+BTN_NORTH = X
+BTN_WEST = Y
+BTN_TL = LB #top of left trigger button
+BTN_TR = RB #top of right trigger button
+BTN_TL = LT #left trigger
+BTN_TR = RT #right trigger
+BTN_SELECT = BACK
+BTN_START = START
+BTN_MODE = GUIDE
