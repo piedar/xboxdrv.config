@@ -1,5 +1,5 @@
 [xboxdrv]
-evdev      = /dev/input/by-id/$MY_DEVICE
+evdev      = /dev/input/by-id/usb-logitech_chillstream_G-UH21
 evdev-grab = true
 mimic-xpad = true
 deadzone   = 1000
