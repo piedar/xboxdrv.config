@@ -1,0 +1,29 @@
+[xboxdrv]
+evdev = /dev/input/by-id/usb-Microsoft_Controller_3033363430303138333537373335-event-joystick
+
+[axismap]
+-Y1 = Y1
+-Y2 = Y2
+
+[evdev-absmap]
+ABS_X = X1
+ABS_Y = Y1
+ABS_RX = X2
+ABS_RY = Y2
+ABS_Z = LT
+ABS_RZ = RT
+ABS_HAT0X = DPAD_X
+ABS_HAT0Y = DPAD_Y
+
+[evdev-keymap]
+BTN_SOUTH = A
+BTN_EAST = B
+BTN_NORTH = X
+BTN_WEST = Y
+BTN_TL = LB
+BTN_TR = RB
+BTN_THUMBL = TL
+BTN_THUMBR = TR
+BTN_SELECT = BACK
+BTN_START = START
+BTN_MODE = GUIDE
