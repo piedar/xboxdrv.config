@@ -15,21 +15,12 @@ Then start xboxdrv with the matching device.
 If your controller doesn't have a config, you can create one in just a few minutes.
 First, map out your controller by pushing buttons while running
 
-    evtest /dev/input/$MY_DEVICE
+    evtest /dev/input/by-id/$MY_DEVICE
 
 Now create `$MY_DEVICE.xboxdrv`, following this template:
 
     [xboxdrv]
-    evdev      = /dev/input/by-id/$MY_DEVICE
-    evdev-grab = true
-    mimic-xpad = true
-    deadzone   = 3000
-
-    [axis-sensitivity]
-    X1 = -0.7
-    X2 = -0.7
-    Y1 = -0.7
-    Y2 = -0.7
+    evdev = /dev/input/by-id/$MY_DEVICE
 
     # Raw controller inputs on the left map to the xbox equivalent on the right.
 
