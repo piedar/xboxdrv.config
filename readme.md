@@ -1,3 +1,5 @@
+IDK what this is and IDC to check. IIRC it's about making an xbox 360 controller work on the desktop or something.
+
 # xboxdrv.config
 
 Repository of [xboxdrv](https://github.com/xboxdrv/xboxdrv) config files for non-standard controllers and adapters.
